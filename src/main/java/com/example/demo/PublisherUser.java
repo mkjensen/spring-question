@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class PublisherUser {
 
     @Autowired
-    private Publisher publisherImplOne;
+    private Publisher publisherImplOne; // <== PublisherImplOne instance is injected - matches Application.publisherImplOne() by name
 
     @Autowired
-    private Publisher publisherImplTwo;
+    private Publisher publisherImplTwo; // <== PublisherImplTwo instance is injected - matches Application.publisherImplTwo() by name
 
     @Autowired
-    private Publisher[] publishers;
+    private Publisher[] publishers;     // <== Will get PublisherImplOne and PublisherImplTwo are both injected
 
     @PostConstruct
     public void printDebugInfo() {
